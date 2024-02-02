@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* カード01 */
+.card-01 {
+	display: grid;
+	grid-template:
+		"photo photo photo photo photo" 1fr
+		". . . . ." 8px
+		". avatar . title ." auto
+		". avatar . subtitle ." auto
+		". . . . ." 8px
+		/ 8px auto 8px 1fr 8px;
+	height: 200px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .photo {
+		grid-area: photo;
+	}
+
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .avatar {
+		grid-area: avatar;
+		align-self: center;
+	}
+}
+
+/* カード01（画像を下に配置） */
+.card-01a {
+	display: grid;
+	grid-template:
+		". . . . ." 8px
+		". avatar . title ." auto
+		". avatar . subtitle ." auto
+		". . . . ." 8px
+		"photo photo photo photo photo" 1fr
+		/ 8px auto 8px 1fr 8px;
+	height: 200px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .photo {
+		grid-area: photo;
+	}
+
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .avatar {
+		grid-area: avatar;
+		align-self: center;
+	}
+}
+
+/* カード02 */
+.card-02 {
+	display: grid;
+	grid-template:
+		"photo  . . ." 20px
+		"photo . title ." auto
+		"photo . subtitle ." auto
+		"photo . avatar ." 1fr
+		"photo  . . ." 20px
+		/ 40% 12px 1fr 12px;
+	height: 120px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .photo {
+		grid-area: photo;
+	}
+
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .avatar {
+		grid-area: avatar;
+		place-self: end;
+	}
+}
+
+/* カード03 */
+.card-03 {
+	display: grid;
+	grid-template:
+		"photo photo photo photo photo" 1fr
+		". . . . ." 8px
+		". avatar . title ." auto
+		". avatar . subtitle ." auto
+		". . . . ." 8px
+		/ 8px auto 8px 1fr 8px;
+	height: 200px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .photo {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+	}
+
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .avatar {
+		grid-area: avatar;
+		align-self: center;
+	}
+
+	&::after {
+		content: "";
+		grid-column: 1 / -1;
+		grid-row: 2 / -1;
+		background-color: rgb(0 0 0 / 50%);
+	}
+
+	> :not(.photo) {
+		z-index: 1;
+		color: white;
+	}
+}
+
+/* ここまで */

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+span.noto {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 48px;
+	background-color: yellow;
+}
+
+span.gloria {
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 48px;
+	background-color: yellow;
+}
+
+/* ここまで */

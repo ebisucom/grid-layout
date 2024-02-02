@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+.grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+	gap: 10px;
+}
+
+/* ここまで */

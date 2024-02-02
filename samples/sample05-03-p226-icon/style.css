@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* アイコン付きリンク：縦並び */
+.with-icon-vertical {
+	display: grid;
+	justify-items: center;
+	font-size: 12px;
+}
+
+/* アイコン付きリンク：横並び */
+.with-icon-horizontal {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+}
+
+/* アイコン付きリンク：横並び（両サイドにアイコン） */
+.with-icon-double {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 16px;
+	align-items: center;
+}
+
+/* アイコン付きリンク：横並び（右サイドのアイコンに自動対応） */
+.with-icon-auto {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-auto-flow: column;
+	gap: 16px;
+	align-items: center;
+}
+
+/* アイコン付きリンク：縦並びメニュー */
+.menu-vertical {
+	display: grid;
+	gap: 16px;
+	align-content: start;
+
+	& a {
+		padding: 8px 12px;
+		border-radius: 8px;
+
+		&.current {
+			background-color: #f1f5f9;
+		}
+
+		&:hover {
+			background-color: #e2e8f0;
+		}
+	}
+
+	/* アイコン付きリンク：縦並び */
+	.with-icon-vertical {
+		justify-items: center;
+		font-size: 12px;
+		display: grid;
+	}
+
+	/* アイコン付きリンク：横並び（右サイドのアイコンに自動対応） */
+	.with-icon-auto {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-auto-flow: column;
+		gap: 16px;
+		align-items: center;
+	}
+}
+
+/* アイコン付きリンク：横並びメニュー */
+.menu-horizontal {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	gap: 2px;
+	justify-content: start;
+
+	& a {
+		padding: 8px;
+		border-radius: 8px;
+
+		&.current {
+			background-color: #f1f5f9;
+		}
+
+		&:hover {
+			background-color: #e2e8f0;
+		}
+	}
+
+	/* アイコン付きリンク：縦並び */
+	.with-icon-vertical {
+		justify-items: center;
+		font-size: 12px;
+		display: grid;
+	}
+}
+
+/* ここまで */

@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+figure {
+	float: left;
+}
+
+h2 {
+	float: left;
+	margin-block: 40px;
+	margin-left: 20px;
+}
+
+button {
+	float: right;
+	margin-block: 36px;
+}
+
+@media (width < 600px) {
+	h2 {
+		margin: 12px 0 24px 20px;
+	}
+
+	button {
+		float: left;
+		width: calc(100% - 140px);
+		margin-block: 0;
+		margin-left: 20px;
+	}
+}
+
+/* スタイル */
+* {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	margin: 20px;
+}
+
+figure {
+	width: 120px;
+	height: 120px;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+button {
+	padding: 12px 28px;
+	font-size: 14px;
+	color: white;
+	appearance: button;
+	cursor: pointer;
+	background-color: black;
+	background-image: none;
+	border: none;
+	border-radius: 0.5em;
+}
+
+@media (width < 600px) {
+	h2 {
+		font-size: 20px;
+	}
+
+	button {
+		padding-inline: 20px;
+	}
+
+	img {
+		border-radius: 0;
+	}
+}

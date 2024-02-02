@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+.datacards-bento {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 16px;
+	container-type: inline-size;
+
+	> * {
+		grid-column: 1 / -1;
+	}
+
+	@container (width >= 480px) {
+		> .type-a {
+			grid-column: span 6;
+		}
+	}
+
+	@container (width >= 960px) {
+		> .type-a {
+			grid-column: span 3;
+		}
+
+		> .type-b {
+			grid-column: span 7;
+			grid-row: span 3;
+		}
+
+		> .type-c {
+			grid-column: span 5;
+		}
+
+		> .type-d {
+			grid-column: span 6;
+		}
+	}
+}
+
+/* データカード */
+.datacard-01 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data chart" auto
+		"subtitle chart" auto
+		/ minmax(max-content, 1fr) auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+.datacard-02 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"chart chart" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+.datacard-03 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data data" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+/* ここまで */

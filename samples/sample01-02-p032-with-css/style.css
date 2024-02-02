@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+div {
+	max-width: 800px;
+	margin-inline: auto;
+}
+
+h1 {
+	margin-block: 64px 32px;
+}
+
+figure {
+	margin: 32px 0;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+table {
+	margin-block: 32px;
+}
+
+button {
+	display: block;
+	margin-block: 32px;
+}
+
+/* テーブルとボタンのスタイル */
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 1em;
+	text-align: left;
+	border: solid 1px gray;
+}
+
+button {
+	padding: 12px 40px;
+	font: inherit;
+	color: white;
+	appearance: button;
+	cursor: pointer;
+	background-color: black;
+	background-image: none;
+	border: none;
+	border-radius: 0.5em;
+}

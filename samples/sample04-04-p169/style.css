@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+span.without-line-height {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 48px;
+	background-color: yellow;
+}
+
+span.with-line-height {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 48px;
+	line-height: 3;
+	background-color: yellow;
+}
+
+/* ここまで */

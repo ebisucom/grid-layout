@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="../assets/reset.css" />
+		<link rel="stylesheet" href="../assets/base.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="padding-small">
+		<!-- ここから -->
+
+		<form class="form">
+			<h1 class="heading-center">アカウントを作成する</h1>
+			<div class="field">
+				<label for="email">メールアドレス</label>
+				<input type="email" id="email" placeholder="mail@example.com" />
+				<p class="text-xsmall">メールアドレスを入力してください</p>
+			</div>
+			<div class="field">
+				<label for="password">パスワード</label>
+				<input type="password" id="password" placeholder="*********" minlength="8" />
+				<p class="text-xsmall">8文字以上で入力してください</p>
+			</div>
+			<button type="submit" class="btn-accent">続ける</button>
+		</form>
+
+		<!-- ここまで -->
+
+		<script src="../assets/base.js"></script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+div {
+	max-width: 800px;
+	margin-inline: auto;
+}
+
+h1 {
+	margin-block: 64px 32px;
+}
+
+figure {
+	margin: 32px 0;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

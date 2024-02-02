@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+.item1.min {
+	width: min-content;
+}
+
+.item1.max {
+	width: max-content;
+}
+
+/* ここまで */

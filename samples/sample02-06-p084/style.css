@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* グリッドを作成 */
+.grid {
+	display: grid;
+	grid-template-areas: "image text button";
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: auto;
+	column-gap: 28px;
+	align-items: center;
+}
+
+@media (width < 600px) {
+	.grid {
+		grid-template-areas:
+			"image text"
+			"image button";
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto auto;
+		column-gap: 20px;
+	}
+}
+
+/* 配置先のエリアを指定 */
+figure {
+	grid-area: image;
+}
+
+h2 {
+	grid-area: text;
+}
+
+button {
+	grid-area: button;
+}
+
+/* スタイル */
+* {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	margin: 20px;
+}
+
+figure {
+	width: 120px;
+	height: 120px;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+button {
+	padding: 12px 28px;
+	font-size: 14px;
+	color: white;
+	appearance: button;
+	cursor: pointer;
+	background-color: black;
+	background-image: none;
+	border: none;
+	border-radius: 0.5em;
+}
+
+@media (width < 600px) {
+	h2 {
+		font-size: 20px;
+	}
+
+	img {
+		border-radius: 0;
+	}
+}

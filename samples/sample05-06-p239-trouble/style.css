@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* セクション02 */
+.section-02 {
+	display: grid;
+	grid-template-areas:
+		". photo"
+		"heading photo"
+		"text photo"
+		"button photo"
+		". photo";
+	grid-template-columns: 3fr 4fr;
+	grid-template-rows: 96px repeat(3, auto) 96px;
+	column-gap: 48px;
+	row-gap: 24px;
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-areas:
+			"photo"
+			"heading"
+			"text"
+			"button";
+		grid-template-columns: auto;
+		grid-template-rows: 240px repeat(3, auto);
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* ここまで */

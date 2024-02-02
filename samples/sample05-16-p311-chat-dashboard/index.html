@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="../assets/reset.css" />
+		<link rel="stylesheet" href="../assets/base.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- ここから -->
+
+		<div class="dashboard">
+			<!-- ヘッダー -->
+			<header class="header background-white border-bottom">
+				<button aria-label="メニュー" class="action" onClick="document.querySelector('.dashboard').classList.toggle('is-toggled')">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+				<div class="site"><a href="#">Trek Planner</a></div>
+				<form class="search hide-on-mobile">
+					<label for="search" class="sr-only">検索</label>
+					<input type="search" id="search" placeholder="Search" />
+					<button type="submit" aria-label="検索する">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+						</svg>
+					</button>
+				</form>
+				<button aria-label="シェア" class="action hide-on-mobile">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+						/>
+					</svg>
+				</button>
+				<button aria-label="ヘルプ" class="action hide-on-mobile">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+						/>
+					</svg>
+				</button>
+				<button aria-label="設定" class="action hide-on-mobile">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+						/>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+					</svg>
+				</button>
+				<button aria-label="オプション" class="action">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+						/>
+					</svg>
+				</button>
+			</header>
+
+			<!-- メイン -->
+			<main class="main background-white no-padding">
+				<div class="chat">
+					<!-- メッセージ  -->
+					<div class="messages scrollbar">
+						<div class="message">
+							<!-- アバター -->
+							<div class="avatar">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+									<path
+										d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"
+									/>
+								</svg>
+							</div>
+							<!-- テキスト -->
+							<div class="text">ご質問やお困りのことなどがありましたら、ご遠慮なくお知らせください。<br />お手伝いいたします。</div>
+							<!-- アクションボタン -->
+							<div class="actions horizontal">
+								<button aria-label="コピー">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M364.615-280Q337-280 318.5-298.5 300-317 300-344.615v-430.77Q300-803 318.5-821.5 337-840 364.615-840h310.77Q703-840 721.5-821.5 740-803 740-775.385v430.77Q740-317 721.5-298.5 703-280 675.385-280h-310.77Zm0-40h310.77q9.231 0 16.923-7.692Q700-335.385 700-344.615v-430.77q0-9.23-7.692-16.923Q684.616-800 675.385-800h-310.77q-9.23 0-16.923 7.692Q340-784.615 340-775.385v430.77q0 9.23 7.692 16.923Q355.385-320 364.615-320Zm-120 160Q217-160 198.5-178.5 180-197 180-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q235.384-200 244.615-200h350.77v40h-350.77ZM340-320v-480 480Z"
+										/>
+									</svg>
+								</button>
+								<button aria-label="高く評価">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M698.462-160H296.923v-440l250.769-247.693L565.385-830q5.461 5.461 9.192 14 3.731 8.538 3.731 15.692V-794l-40.923 194h278q25.077 0 44.846 19.769Q880-560.462 880-535.385v49.231q0 5.462-1.231 11.923-1.23 6.462-3.23 11.923L766.308-203.384q-8.231 18.461-27.692 30.923Q719.154-160 698.462-160Zm-361.539-40h361.539q8.461 0 17.307-4.615 8.846-4.616 13.462-15.385L840-480v-55.385q0-10.769-6.923-17.692T815.385-560H487.692L534-778.462 336.923-582.923V-200Zm0-382.923V-200v-382.923Zm-40-17.077v40H160v360h136.923v40H120v-440h176.923Z"
+										/>
+									</svg>
+								</button>
+								<button aria-label="低く評価">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M261.538-767.693h401.539v440.001L412.308-80l-17.693-17.692q-5.461-5.462-9.192-14-3.731-8.539-3.731-15.693v-6.307l40.923-194h-278q-25.077 0-44.846-19.77-19.77-19.769-19.77-44.846v-49.231q0-5.461 1.232-11.923 1.23-6.461 3.23-11.923l109.231-258.923q8.231-18.462 27.692-30.923 19.462-12.462 40.154-12.462Zm361.539 40H261.538q-8.461 0-17.307 4.616-8.846 4.615-13.462 15.384L120-447.693v55.385q0 10.769 6.923 17.692t17.692 6.923h327.693L426-149.231l197.077-195.538v-382.924Zm0 382.924v-382.924 382.924Zm40 17.077v-40.001H800v-360H663.077v-40H840v440.001H663.077Z"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="message">
+							<div class="avatar">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+									<path
+										d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
+									/>
+								</svg>
+							</div>
+							<div class="text">
+								こんにちは！ 画像生成サービスについて質問があります。 このサービスではどのような画像を生成できますか？ 得意分野はありますか？
+							</div>
+						</div>
+						<div class="message">
+							<div class="avatar">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+									<path
+										d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"
+									/>
+								</svg>
+							</div>
+							<div class="text">
+								こんにちは！弊社の画像生成サービスでは、様々な種類の画像を生成できます。
+								たとえば、自然風景や都市風景、動物、人物、抽象的なデザイン、イラスト、アバター、バナー広告、さらには特定のテーマやカテゴリに関連する画像などが生成可能です。
+								また、弊社は特定の得意分野を持っておりませんが、幅広いバリエーションの画像生成に対応しておりますので、お好みやニーズに合わせた画像を生成することができます。
+								どのような種類の画像を必要とされていますか？ お力になれることがあれば、お教えください。
+							</div>
+							<div class="actions horizontal">
+								<button aria-label="コピー">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M364.615-280Q337-280 318.5-298.5 300-317 300-344.615v-430.77Q300-803 318.5-821.5 337-840 364.615-840h310.77Q703-840 721.5-821.5 740-803 740-775.385v430.77Q740-317 721.5-298.5 703-280 675.385-280h-310.77Zm0-40h310.77q9.231 0 16.923-7.692Q700-335.385 700-344.615v-430.77q0-9.23-7.692-16.923Q684.616-800 675.385-800h-310.77q-9.23 0-16.923 7.692Q340-784.615 340-775.385v430.77q0 9.23 7.692 16.923Q355.385-320 364.615-320Zm-120 160Q217-160 198.5-178.5 180-197 180-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q235.384-200 244.615-200h350.77v40h-350.77ZM340-320v-480 480Z"
+										/>
+									</svg>
+								</button>
+								<button aria-label="高く評価">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M698.462-160H296.923v-440l250.769-247.693L565.385-830q5.461 5.461 9.192 14 3.731 8.538 3.731 15.692V-794l-40.923 194h278q25.077 0 44.846 19.769Q880-560.462 880-535.385v49.231q0 5.462-1.231 11.923-1.23 6.462-3.23 11.923L766.308-203.384q-8.231 18.461-27.692 30.923Q719.154-160 698.462-160Zm-361.539-40h361.539q8.461 0 17.307-4.615 8.846-4.616 13.462-15.385L840-480v-55.385q0-10.769-6.923-17.692T815.385-560H487.692L534-778.462 336.923-582.923V-200Zm0-382.923V-200v-382.923Zm-40-17.077v40H160v360h136.923v40H120v-440h176.923Z"
+										/>
+									</svg>
+								</button>
+								<button aria-label="低く評価">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+										<path
+											d="M261.538-767.693h401.539v440.001L412.308-80l-17.693-17.692q-5.461-5.462-9.192-14-3.731-8.539-3.731-15.693v-6.307l40.923-194h-278q-25.077 0-44.846-19.77-19.77-19.769-19.77-44.846v-49.231q0-5.461 1.232-11.923 1.23-6.461 3.23-11.923l109.231-258.923q8.231-18.462 27.692-30.923 19.462-12.462 40.154-12.462Zm361.539 40H261.538q-8.461 0-17.307 4.616-8.846 4.615-13.462 15.384L120-447.693v55.385q0 10.769 6.923 17.692t17.692 6.923h327.693L426-149.231l197.077-195.538v-382.924Zm0 382.924v-382.924 382.924Zm40 17.077v-40.001H800v-360H663.077v-40H840v440.001H663.077Z"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- フォーム -->
+					<form class="form background-bluegray">
+						<!-- 入力欄 -->
+						<label for="message" class="sr-only">メッセージを入力</label>
+						<textarea id="message" rows="1" placeholder="Message" class="scrollbar"></textarea>
+						<!-- 送信ボタン -->
+						<button type="submit" aria-label="送信" class="background-lightgreen">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="ionicon" viewBox="0 0 512 512">
+								<path
+									d="M476.59 227.05l-.16-.07L49.35 49.84A23.56 23.56 0 0027.14 52 24.65 24.65 0 0016 72.59v113.29a24 24 0 0019.52 23.57l232.93 43.07a4 4 0 010 7.86L35.53 303.45A24 24 0 0016 327v113.31A23.57 23.57 0 0026.59 460a23.94 23.94 0 0013.22 4 24.55 24.55 0 009.52-1.93L476.4 285.94l.19-.09a32 32 0 000-58.8z"
+								/>
+							</svg>
+						</button>
+						<!-- 注意書き -->
+						<div class="text-small">Enter で改行 / Ctrl + Enter または Command + Enter で送信</div>
+					</form>
+				</div>
+			</main>
+
+			<!-- サイドバー -->
+			<div class="side dark-bar">
+				<h2>Menu</h2>
+
+				<ul class="menu-vertical">
+					<li>
+						<a href="#" class="with-icon-auto">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+								/>
+							</svg>
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="#" class="with-icon-auto current">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+								/>
+							</svg>
+							Report
+						</a>
+					</li>
+					<li>
+						<a href="#" class="with-icon-auto">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+							</svg>
+							Trend Data
+						</a>
+					</li>
+					<li>
+						<a href="#" class="with-icon-auto">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+								/>
+							</svg>
+							Chat
+						</a>
+					</li>
+					<li>
+						<a href="#" class="with-icon-auto">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+								/>
+							</svg>
+							Projects
+						</a>
+					</li>
+				</ul>
+
+				<a href="#" class="with-icon-horizontal profile">
+					<img src="../assets/avatar/3.jpg" alt="account" width="48" height="48" />
+					Profile
+				</a>
+			</div>
+		</div>
+		<!-- ここまで -->
+
+		<script src="../assets/base.js"></script>
+	</body>
+</html>

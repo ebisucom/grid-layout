@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.flex2 {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	margin-left: 20px;
+}
+
+button {
+	margin-left: auto;
+}
+
+@media (width < 600px) {
+	.flex2 {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	button {
+		width: 100%;
+		margin-top: 24px;
+	}
+}
+
+/* スタイル */
+* {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	margin: 20px;
+}
+
+figure {
+	width: 120px;
+	height: 120px;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+button {
+	padding: 12px 28px;
+	font-size: 14px;
+	color: white;
+	appearance: button;
+	cursor: pointer;
+	background-color: black;
+	background-image: none;
+	border: none;
+	border-radius: 0.5em;
+}
+
+@media (width < 600px) {
+	h2 {
+		font-size: 20px;
+	}
+
+	img {
+		border-radius: 0;
+	}
+}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+div {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 33px;
+	border: solid 2px black;
+}
+
+svg {
+	background-color: yellow;
+}
+
+/* ここまで */

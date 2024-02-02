@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+*:has(> .form) {
+	container-type: inline-size;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: max-content minmax(auto, 400px);
+	column-gap: 32px;
+	row-gap: 24px;
+	justify-content: center;
+	align-content: start;
+
+	> * {
+		grid-column: span 2;
+	}
+
+	> .field {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-template-rows: auto 18px;
+		row-gap: 4px;
+		align-items: center;
+
+		> p {
+			grid-column: 2;
+		}
+	}
+
+	@container (width <= 500px) {
+		grid-template-columns: minmax(auto, 400px);
+
+		> * {
+			grid-column: span 1;
+		}
+
+		> .field {
+			grid-template-rows: auto auto 18px;
+		}
+	}
+}
+
+/* ここまで */

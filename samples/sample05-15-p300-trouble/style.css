@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+.dashboard {
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"side main";
+	grid-template-columns: 280px auto;
+	grid-template-rows: auto 1fr;
+	height: 100svh;
+	transition: grid-template-columns 0.5s;
+
+	/* サイドバーの開閉（.is-toggledがあれば閉じる） */
+	&.is-toggled {
+		grid-template-columns: 0px auto;
+	}
+
+	> .header {
+		grid-area: header;
+
+		/* z-index: 1; */
+	}
+
+	> .main {
+		grid-area: main;
+
+		/* z-index: 1; */
+		overflow-y: auto;
+		padding: 24px;
+	}
+
+	> .side {
+		grid-area: side;
+		display: grid;
+		grid-template-columns: minmax(max-content, auto);
+		grid-template-rows: auto 1fr;
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding: 16px;
+	}
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-columns: 0% auto;
+		overflow-x: hidden;
+
+		/* メニューの開閉（.is-toggledがあれば開く） */
+		&.is-toggled {
+			grid-template-columns: 100% auto;
+		}
+
+		> .main {
+			min-width: 320px;
+		}
+	}
+}
+
+/* ヘッダー */
+.header {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-auto-flow: column;
+	gap: 8px;
+	align-items: center;
+	padding: 16px;
+
+	/* タップターゲットを拡張 */
+	.action,
+	.nav a {
+		padding: 12px;
+	}
+}
+
+/* カードUI（12カラムでBento UI） */
+.datacards-bento {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 16px;
+	container-type: inline-size;
+
+	> * {
+		grid-column: 1 / -1;
+	}
+
+	@container (width >= 480px) {
+		> .type-a {
+			grid-column: span 6;
+		}
+	}
+
+	@container (width >= 960px) {
+		> .type-a {
+			grid-column: span 3;
+		}
+
+		> .type-b {
+			grid-column: span 7;
+			grid-row: span 3;
+		}
+
+		> .type-c {
+			grid-column: span 5;
+		}
+
+		> .type-d {
+			grid-column: span 6;
+		}
+	}
+}
+
+/* データカード */
+.datacard-01 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data chart" auto
+		"subtitle chart" auto
+		/ minmax(max-content, 1fr) auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+.datacard-02 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"chart chart" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+.datacard-03 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data data" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+/* アイコン付きリンク：縦並びメニュー */
+.menu-vertical {
+	display: grid;
+	gap: 16px;
+	align-content: start;
+
+	& a {
+		padding: 8px 12px;
+		border-radius: 8px;
+
+		&.current {
+			background-color: #f1f5f9;
+		}
+
+		&:hover {
+			background-color: #e2e8f0;
+		}
+	}
+
+	/* アイコン付きリンク：縦並び */
+	.with-icon-vertical {
+		justify-items: center;
+		font-size: 12px;
+		display: grid;
+	}
+
+	/* アイコン付きリンク：横並び（右サイドのアイコンに自動対応） */
+	.with-icon-auto {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-auto-flow: column;
+		gap: 16px;
+		align-items: center;
+	}
+}
+
+/* アイコン付きリンク：横並び */
+.with-icon-horizontal {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+}
+
+/* ここまで */

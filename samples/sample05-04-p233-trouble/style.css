@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* 検索フォーム01 */
+.search-01 {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 8px;
+	align-items: center;
+}
+
+/* 検索フォーム02 */
+.search-02 {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 8px;
+	align-items: center;
+
+	> button {
+		grid-column: 1;
+	}
+
+	> input {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		padding-left: 48px;
+	}
+}
+
+/* ここまで */

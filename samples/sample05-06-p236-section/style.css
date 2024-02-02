@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* セクション01 */
+.section-01 {
+	display: grid;
+	grid-template-areas:
+		"heading"
+		"text"
+		"button"
+		"."
+		"photo";
+	grid-template-rows: repeat(4, auto) 480px;
+	row-gap: 24px;
+	justify-items: center;
+	text-align: center;
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* セクション02 */
+.section-02 {
+	display: grid;
+	grid-template-areas:
+		". photo"
+		"heading photo"
+		"text photo"
+		"button photo"
+		". photo";
+	grid-template-columns: 3fr 4fr;
+	grid-template-rows: 96px repeat(3, auto) 96px;
+	column-gap: 48px;
+	row-gap: 24px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-areas:
+			"photo"
+			"heading"
+			"text"
+			"button";
+		grid-template-columns: auto;
+		grid-template-rows: 240px repeat(3, auto);
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* セクション02（逆配置） */
+.section-02-reverse {
+	display: grid;
+	grid-template-areas:
+		"photo ."
+		"photo heading"
+		"photo text"
+		"photo button"
+		"photo .";
+	grid-template-columns: 4fr 3fr;
+	grid-template-rows: 96px repeat(3, auto) 96px;
+	column-gap: 48px;
+	row-gap: 24px;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-areas:
+			"photo"
+			"heading"
+			"text"
+			"button";
+		grid-template-columns: auto;
+		grid-template-rows: 240px repeat(3, auto);
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* セクション02（画像の切り抜きなし） */
+.section-02-image {
+	display: grid;
+	grid-template-areas:
+		". photo"
+		"heading photo"
+		"text photo"
+		"button photo"
+		". photo";
+	grid-template-columns: 3fr 4fr;
+	grid-template-rows: 1fr repeat(3, auto) 1fr;
+	column-gap: 48px;
+	row-gap: 24px;
+
+	/* Safariで画像の表示が崩れるのを防ぐ */
+	> .photo {
+		height: auto;
+	}
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-areas:
+			"photo"
+			"heading"
+			"text"
+			"button";
+		grid-template-columns: auto;
+		grid-template-rows: repeat(4, auto);
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* セクション02（画像の切り抜きなし＋逆配置） */
+.section-02-image-reverse {
+	display: grid;
+	grid-template-areas:
+		"photo ."
+		"photo heading"
+		"photo text"
+		"photo button"
+		"photo .";
+	grid-template-columns: 4fr 3fr;
+	grid-template-rows: 1fr repeat(3, auto) 1fr;
+	column-gap: 48px;
+	row-gap: 24px;
+
+	/* Safariで画像の表示が崩れるのを防ぐ */
+	> .photo {
+		height: auto;
+	}
+
+	/* モバイル */
+	@media (width <= 768px) {
+		grid-template-areas:
+			"photo"
+			"heading"
+			"text"
+			"button";
+		grid-template-columns: auto;
+		grid-template-rows: repeat(4, auto);
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-area: photo;
+	}
+}
+
+/* セクション03 */
+.section-03 {
+	display: grid;
+	grid-template-areas:
+		". . ."
+		". heading ."
+		". text ."
+		". button ."
+		". . .";
+	grid-template-columns: 40px auto 40px;
+	grid-template-rows: 96px repeat(3, auto) 96px;
+	row-gap: 24px;
+	justify-items: center;
+	color: white;
+	text-align: center;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		z-index: -1;
+		filter: brightness(0.5);
+	}
+}
+
+/* セクション03（左下にアイテムを重ねる） */
+.section-03-align {
+	display: grid;
+	grid-template-areas:
+		". . ."
+		". heading ."
+		". text ."
+		". button ."
+		". . .";
+	grid-template-columns: 40px auto 40px;
+	grid-template-rows: 140px repeat(3, auto) 40px;
+	row-gap: 24px;
+	justify-items: start;
+	color: white;
+	text-align: left;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		z-index: -1;
+		filter: brightness(0.5);
+	}
+}
+
+/* セクション03（heightで高さをコントロール） */
+.section-03-height {
+	display: grid;
+	grid-template-areas:
+		". . ."
+		". heading ."
+		". text ."
+		". button ."
+		". . .";
+	grid-template-columns: 40px auto 40px;
+	grid-template-rows: 1fr repeat(3, auto) 1fr;
+	row-gap: 24px;
+	justify-items: center;
+	box-sizing: content-box;
+	height: 600px;
+	color: white;
+	text-align: center;
+
+	/* 行のトラックサイズ確定の処理から画像を除外 */
+	> .photo {
+		height: 0;
+		min-height: 100%;
+	}
+
+	/* アイテムの配置先 */
+	> .heading {
+		grid-area: heading;
+	}
+
+	> .text {
+		grid-area: text;
+	}
+
+	> .button {
+		grid-area: button;
+	}
+
+	> .photo {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		z-index: -1;
+		filter: brightness(0.5);
+	}
+}
+
+/* ここまで */

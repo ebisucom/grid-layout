@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* 縦並び */
+.vertical {
+	display: grid;
+	gap: 24px;
+	align-content: start;
+}
+
+/* 横並び */
+.horizontal {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 24px;
+	justify-content: start;
+}
+
+/* ここまで */

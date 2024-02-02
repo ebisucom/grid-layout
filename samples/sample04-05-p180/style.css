@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+div {
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 48px;
+	border: solid 2px black;
+}
+
+svg {
+	background-color: yellow;
+}
+
+svg.with-vertical-align {
+	vertical-align: bottom;
+}
+
+svg.with-display {
+	display: block;
+}
+
+button {
+	padding: 10px;
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 16px;
+	color: white;
+	background-color: black;
+	border: none;
+}
+
+button.with-vertical-align {
+	vertical-align: bottom;
+}
+
+button.with-display {
+	display: block;
+}
+
+/* ここまで */

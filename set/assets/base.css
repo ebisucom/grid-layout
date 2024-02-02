@@ -1,0 +1,648 @@
+@charset "utf-8";
+
+/* ================
+
+ベースCSS
+
+================ */
+
+/* フォント */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+body {
+	font-family: Inter, "Noto Sans JP", sans-serif;
+}
+
+/* カラー */
+:root {
+	--color-accent: #ffcd6d;
+	--blue-smoke: #b4d0d9;
+	--dark-blue-gray: #374151;
+	--light-blue-gray: #e2e8f0;
+}
+
+/* 背景色 */
+.background-ivory {
+	background-color: #f4f0e9;
+}
+
+.background-whitesmoke {
+	background-color: #f5f5f5;
+}
+
+.background-bluesmoke {
+	background-color: var(--blue-smoke);
+}
+
+.background-bluegray {
+	background-color: var(--light-blue-gray);
+}
+
+.background-white {
+	background-color: #fff;
+}
+
+.background-lightgreen {
+	background-color: lightgreen;
+}
+
+.background-green {
+	background-color: #eeffde;
+}
+
+.background-red {
+	background-color: #fff0e5;
+}
+
+.background-yellow {
+	background-color: #feffcd;
+}
+
+/* パディングを挿入するクラス */
+.padding-small {
+	padding: 16px;
+}
+
+/* パディングを削除するクラス */
+.no-padding {
+	padding: 0 !important;
+}
+
+/* 区切り */
+hr {
+	margin: 0;
+	padding-block: 40px;
+	border-width: 0;
+}
+
+/* スクリーンリーダー用（画面に表示しない） */
+.sr-only {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+/* 配置先に合わせたサイズにする */
+.fill {
+	width: 100%;
+	height: 100%;
+}
+
+/* 画像を配置先に合わせたサイズにして切り抜く */
+.img-fill {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* 角丸にする */
+.radius {
+	border-radius: 8px;
+}
+
+/* ブーツアイコンを付けるクラス */
+[class*="boots-logo"] {
+	padding: 32px 10px;
+	font-size: clamp(10px, 0.0286rem + 2.5445vw, 20px); /* 画面幅375px～768pxで10px～20pxに変更 */
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	background-color: #511524;
+}
+
+[class*="boots-logo"]::before {
+	content: url("img/boots.svg");
+	display: block;
+}
+
+.boots-logo-large {
+	font-size: 40px;
+}
+
+/* コードのスタイル */
+pre {
+	overflow-x: auto;
+	padding: 16px;
+	font-size: 85%;
+	line-height: 1.45;
+	color: white;
+	background-color: #222;
+	border-radius: 6px;
+}
+
+/* ===========================
+ * テキスト
+ * =========================== */
+
+.text-xsmall {
+	font-size: 12px;
+}
+
+.text-small {
+	font-size: 14px;
+}
+
+.text {
+	line-height: 1.8;
+}
+
+@media (width < 500px) {
+	.text-xsmall-mobile * {
+		font-size: 10px !important;
+	}
+}
+
+.heading-center {
+	margin-block: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.heading-large {
+	margin-block: 0 20px;
+	font-size: 28px;
+	color: #475569;
+}
+
+/* ===========================
+ * アイコン
+ * =========================== */
+
+:where(.vertical, .horizontal, .search-01, .search-02, .header) svg {
+	width: 24px;
+	height: 24px;
+}
+
+:where(.with-icon-vertical, .with-icon-horizontal, .with-icon-double, .with-icon-auto) svg {
+	width: 32px;
+	height: 32px;
+}
+
+/* ===========================
+ * フォーム
+ * =========================== */
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="tel"],
+[type="search"],
+[type="password"],
+select,
+textarea {
+	padding: 12px;
+	background-color: white;
+	background-image: none;
+	border: solid 1px #888;
+	border-radius: 4px;
+}
+
+[type="submit"],
+[type="reset"] {
+	padding: 12px;
+	border-radius: 4px;
+}
+
+::placeholder {
+	color: #999;
+}
+
+:where(input, select, textarea, button):focus-visible {
+	outline: 2px solid black;
+}
+
+/* ===========================
+ * ボタン
+ * =========================== */
+.btn {
+	padding: 16px 40px;
+	color: white;
+	background-color: black;
+	border-radius: 4px;
+}
+
+.btn-accent {
+	margin-block-end: 16px;
+	padding: 16px 40px;
+	color: black;
+	background-color: var(--color-accent);
+	border-radius: 8px;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 20%);
+}
+
+.btn-icon-black {
+	color: white;
+	background: black;
+}
+
+.btn-small {
+	padding: 4px 12px;
+	font-size: 14px;
+	color: white;
+	background-color: black;
+	border: solid 1px black;
+	border-radius: 4px;
+
+	@media (width <=600px) {
+		font-size: 10px;
+	}
+}
+
+.btn-small-outline {
+	padding: 4px 12px;
+	font-size: 14px;
+	color: black;
+	background-color: transparent;
+	border: solid 1px black;
+	border-radius: 4px;
+
+	@media (width <=600px) {
+		font-size: 10px;
+	}
+}
+
+/* ===========================
+ * スクロールバー
+ * =========================== */
+
+@media (pointer: fine) {
+	.scrollbar {
+		/* スクロールバーの太さと背景色 */
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-corner {
+			width: 8px;
+			height: 8px;
+			background: transparent;
+		}
+
+		/* 矢印ボタンのスペースを削除 */
+		&::-webkit-scrollbar-button {
+			width: 0;
+			height: 0;
+		}
+
+		/* ハンドルの最小の長さ、色、角丸半径 */
+		&::-webkit-scrollbar-thumb {
+			min-width: 48px;
+			min-height: 48px;
+			background: lightgray;
+			border-radius: 4px;
+		}
+	}
+
+	.holy .scrollbar {
+		/* スクロールバーの太さ */
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-corner {
+			width: 4px;
+			height: 4px;
+		}
+
+		/* ハンドルの色 */
+		&::-webkit-scrollbar-thumb {
+			background: #94a3b8;
+		}
+	}
+}
+
+/* ===========================
+ * ヘッダー関連
+ * =========================== */
+
+/* ロゴ画像 */
+.logo img {
+	width: 48px;
+	height: 48px;
+
+	@media (width <=700px) {
+		width: 32px;
+		height: 32px;
+	}
+}
+
+/* サイト名 */
+.site {
+	font-size: 20px;
+	font-weight: bold;
+
+	@media (width <=700px) {
+		font-size: 16px;
+	}
+}
+
+/* アクションボタン */
+.action > svg {
+	width: 24px;
+	height: 24px;
+
+	@media (width <=700px) {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+/* ナビゲーションメニュー */
+.nav {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 8px;
+	justify-content: start;
+}
+
+/* 検索フォーム */
+.search {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 8px;
+	align-items: center;
+
+	> button {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	> input {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		max-width: 240px;
+		padding-block: 8px;
+		padding-left: 48px;
+		background-color: var(--light-blue-gray);
+		border: none;
+	}
+}
+
+/* モバイルで表示 */
+.show-on-mobile {
+	@media (width > 980px) {
+		display: none !important;
+	}
+}
+
+/* モバイルで隠す */
+.hide-on-mobile {
+	@media (width <= 980px) {
+		display: none !important;
+	}
+}
+
+/* ===========================
+ * セクション
+ * =========================== */
+
+[class^="section-"] {
+	/* セクション内の上下の余白 */
+	padding-block: 96px;
+
+	&[class^="section-01"] + [class^="section-02"] {
+		padding-block-start: 112px;
+	}
+
+	&[class^="section-02"] + [class^="section-02"] {
+		padding-block-start: 0;
+	}
+
+	/* 横並びセクションのカスタマイズ（ランディングページ用） */
+	&[class^="section-02"].lp-style {
+		grid-template-rows: 1fr repeat(3, auto) 2fr;
+
+		@media (width <= 768px) {
+			grid-template-rows: repeat(4, auto);
+		}
+	}
+
+	/* 重ね合わせセクションのカスタマイズ（ランディングページ用） */
+	&[class^="section-03"].lp-style {
+		grid-template-rows: 160px repeat(3, auto) 112px;
+		padding-block: 0;
+		color: black;
+
+		.photo {
+			filter: none;
+			object-position: right center;
+			border-radius: 0;
+		}
+
+		@media (width <= 768px) {
+			text-shadow: 0 0 10px white;
+
+			.photo {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	/* セクション内の見出し、文章、ボタン、画像のスタイル */
+	.heading {
+		font-size: min(32px, 6vw);
+		font-weight: bold;
+		line-height: 1.4;
+	}
+
+	& h1.heading {
+		font-size: min(48px, 6vw);
+	}
+
+	.text {
+		max-width: 26em;
+		font-size: min(16px, 3.5vw);
+	}
+
+	.button {
+		max-width: 300px;
+		padding: 16px 40px;
+		font-size: min(16px, 3.5vw);
+		color: black;
+		background-color: var(--color-accent);
+		border-radius: 4px;
+	}
+
+	.photo {
+		border-radius: 8px;
+	}
+}
+
+/* ===========================
+ * カード
+ * =========================== */
+
+[class^="card-"] {
+	/* カードの形状 */
+	overflow: hidden;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px -1px rgb(0 0 0 / 20%);
+
+	/* カード内のタイトル、サブタイトル、アバターのスタイル */
+	.title {
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.subtitle {
+		font-size: 10px;
+	}
+
+	.avatar img {
+		width: 32px;
+		height: 32px;
+		background-color: #f1f5f9;
+		border: solid 1px #cbd5e1;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+}
+
+/* ===========================
+ * データカード
+ * =========================== */
+
+[class^="datacard-"] {
+	/* カードの形状 */
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px -1px rgb(0 0 0 / 20%);
+
+	/* カード内のタイトル、サブタイトル、データ、アイコンのスタイル */
+	.title {
+		font-size: 14px;
+		font-weight: bold;
+		color: #727272;
+	}
+
+	.subtitle {
+		font-size: 12px;
+	}
+
+	.data {
+		font-size: 28px;
+		font-weight: 500;
+
+		&.text-small {
+			font-size: 16px;
+		}
+	}
+
+	.icon {
+		color: #64748b;
+
+		& svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+/* ===========================
+ * 記事
+ * =========================== */
+
+.post {
+	& h1 {
+		margin-block: 1.25em 1em;
+		font-size: min(36px, 7vw);
+		font-weight: bold;
+	}
+
+	& p {
+		margin-block: 1.5em;
+		line-height: 1.8;
+	}
+}
+
+/* ===========================
+ * フッターバー
+ * =========================== */
+
+.bar {
+	padding: 16px;
+	color: white;
+	background-color: var(--dark-blue-gray);
+
+	/* 横並びメニューをカスタマイズ */
+	&.horizontal {
+		justify-content: center;
+
+		& svg {
+			fill: white;
+		}
+	}
+}
+
+/* ===========================
+ * ダッシュボード
+ * =========================== */
+
+.border-bottom {
+	border-bottom: solid 1px rgb(0 0 0 / 20%);
+}
+
+.dark-bar {
+	color: white;
+	background-color: var(--dark-blue-gray);
+
+	& h2 {
+		margin: 20px 12px;
+		font-size: 18px;
+		color: #cbd5e1;
+	}
+
+	.menu-vertical {
+		.current {
+			background-color: rgb(255 255 255 / 10%);
+		}
+
+		:hover {
+			background-color: rgb(255 255 255 / 20%);
+		}
+	}
+
+	.profile {
+		padding: 8px 4px;
+
+		& img {
+			width: 48px;
+			height: 48px;
+			background-color: #f1f5f9;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+}
+
+/* ===========================
+ * チャット
+ * =========================== */
+
+.chat {
+	.avatar {
+		display: grid;
+		place-items: center;
+		width: 48px;
+		height: 48px;
+		background: #f1f5f9;
+		border: solid 2px #cbd5e1;
+		border-radius: 50%;
+
+		& svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	.form {
+		& svg {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}

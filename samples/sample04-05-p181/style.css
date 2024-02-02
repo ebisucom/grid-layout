@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+main {
+	border: solid 4px black;
+}
+
+/* BOX01 */
+div.box01 {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 48px;
+	background-color: palegoldenrod;
+	border: none;
+}
+
+div.box01 span {
+	font-family: "Gloria Hallelujah", cursive;
+	background-color: yellow;
+}
+
+/* BOX02 */
+div.box02 {
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 48px;
+	background-color: lightsalmon;
+	border: none;
+}
+
+div.box02 span {
+	font-family: "Gloria Hallelujah", cursive;
+	line-height: 3;
+	background-color: yellow;
+}
+
+/* BOX03 */
+div.box03 {
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 48px;
+	background-color: lightseagreen;
+	border: none;
+}
+
+div.box03 svg {
+	background-color: yellow;
+}
+
+div.box03 button {
+	padding: 10px;
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 16px;
+	color: white;
+	background-color: black;
+	border: none;
+}
+
+/* ここまで */

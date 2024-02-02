@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* データカード01 */
+.datacard-01 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data chart" auto
+		"subtitle chart" auto
+		/ minmax(max-content, 1fr) auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+/* データカード02 */
+.datacard-02 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"chart chart" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+/* データカード03 */
+.datacard-03 {
+	display: grid;
+	grid-template:
+		"title icon" auto
+		". . " 20px
+		"data data" auto
+		/ 1fr auto;
+	padding: 16px;
+
+	/* アイテムの配置先 */
+	> .title {
+		grid-area: title;
+	}
+
+	> .subtitle {
+		grid-area: subtitle;
+	}
+
+	> .data {
+		grid-area: data;
+	}
+
+	> .chart {
+		grid-area: chart;
+		align-self: center;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	> .icon {
+		grid-area: icon;
+		justify-self: end;
+	}
+}
+
+/* ここまで */

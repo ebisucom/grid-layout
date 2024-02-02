@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* ================
+
+レイアウトの設定
+
+================ */
+
+/* ここから */
+
+/* グリッド */
+.pancake {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100svh;
+
+	> .main {
+		min-width: 0;
+		padding: 16px 16px 80px;
+	}
+}
+
+/* フローレイアウト */
+.pancake-flow {
+	display: block;
+	width: auto;
+
+	> .main {
+		padding: 16px 16px 80px;
+	}
+}
+
+/* 記事 */
+.post {
+	max-width: none;
+}
+
+/* ヘッダー */
+.header {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-auto-flow: column;
+	gap: 8px;
+	align-items: center;
+	padding: 16px;
+
+	/* タップターゲットを拡張 */
+	.action,
+	.nav a {
+		padding: 12px;
+	}
+}
+
+/* フォーム */
+*:has(> .form) {
+	container-type: inline-size;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: max-content minmax(auto, 400px);
+	column-gap: 32px;
+	row-gap: 24px;
+	justify-content: center;
+	align-content: start;
+
+	> * {
+		grid-column: span 2;
+	}
+
+	> .field {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-template-rows: auto 18px;
+		row-gap: 4px;
+		align-items: center;
+
+		> p {
+			grid-column: 2;
+		}
+	}
+
+	@container (width <= 500px) {
+		grid-template-columns: minmax(auto, 400px);
+
+		> * {
+			grid-column: span 1;
+		}
+
+		> .field {
+			grid-template-rows: auto auto 18px;
+		}
+	}
+}
+
+/* 横並びメニュー */
+.horizontal {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 24px;
+	justify-content: start;
+}
+
+/* ここまで */
